@@ -11,6 +11,12 @@
   ],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "author": "aweiu",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aweiu/wow-stock-quotation"
+  },
   "dependencies": {
     "python-shell": "^1.0.8"
   },
