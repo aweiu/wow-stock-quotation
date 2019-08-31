@@ -74,7 +74,7 @@ function getRealTimeQuotation(data: any) {
         close: now,
         volume,
         amount,
-        turnover,
+        turnover: turnover || 0,
         suspended: volume === 0,
       }
     }
