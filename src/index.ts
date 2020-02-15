@@ -51,6 +51,16 @@ function execPython(fileName: string, ...args: string[]) {
 function getRealTimeQuotation(data: any) {
   const quotations: RealTimeQuotation = {}
   const lastDate = data[SZ].datetime.split(' ')[0] // 取深圳成指日期为最新交易日期
+  const getFiveQuotation = (data: any, key: string) => {
+    const quotation: any = []
+    for (let i = 1; i < 6; i++) {
+      quotation.push({
+        price: data[key + i],
+        volume: data[key + i + '_volume'],
+      })
+    }
+    return quotation
+  }
   for (const code of Object.keys(data)) {
     const {
       datetime,
@@ -76,6 +86,8 @@ function getRealTimeQuotation(data: any) {
         amount,
         turnover: turnover || 0,
         suspended: volume === 0,
+        buying: getFiveQuotation(data[code], 'bid'),
+        selling: getFiveQuotation(data[code], 'ask'),
       }
     }
   }

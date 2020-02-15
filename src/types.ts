@@ -16,6 +16,26 @@ export interface Quotation {
   suspended: boolean
 }
 
+interface BuyingAndSelling {
+  price: number
+  volume: number
+}
+
 export interface RealTimeQuotation {
-  [code: string]: Quotation
+  [code: string]: Quotation & {
+    buying: [
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+    ]
+    selling: [
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+      BuyingAndSelling,
+    ]
+  }
 }
