@@ -7,9 +7,10 @@
   date: string // 日期
   code: string // 股票代码
   open: number // 开盘价
+  close: number // 收盘价/当前价
+  preClose?: number // 昨日收盘价 只在实时行情中有该字段
   high: number // 最高价
   low: number // 最低价
-  close: number // 收盘价/当前价
   volume: number // 成交量（单位：股）
   amount: number // 成交额（单位：人民币元）
   turnover: number // 换手率

@@ -1,6 +1,6 @@
 {
   "name": "wow-stock-quotation",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "获取所有 A 股实时 + 历史行情",
   "keywords": [
     "stock",

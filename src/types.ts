@@ -7,9 +7,9 @@ export interface Quotation {
   date: string
   code: string
   open: number
+  close: number
   high: number
   low: number
-  close: number
   volume: number
   amount: number
   turnover: number
@@ -23,6 +23,7 @@ interface BuyingAndSelling {
 
 export interface RealTimeQuotation {
   [code: string]: Quotation & {
+    preClose: number
     buying: [
       BuyingAndSelling,
       BuyingAndSelling,
